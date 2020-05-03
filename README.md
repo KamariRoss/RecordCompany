@@ -1,25 +1,56 @@
-# Default Template for SDG .NET Course
+Rhythm's gonna get you
+For the past few lessons, we have chatted about and worked with data; for this project, we continue our journey into data and modeling a database. We are starting a record label company, and we a place to store our bands, albums, and songs. You are creating a console app that stores our companies information in a database.
 
-This is the default template for a simple .NET Core console app. This template has:
+Objectives
+Practice working with SQL
+Practice working with ORMs (EF Core)
+Requirements
+Create a console that allows a user to store and manage the company's bands, albums, and songs.
 
-- github integration
+You can use the template we have been using, but you can also use the one we talked about today. You can install it by using the following command:
 
-## To push to github
+dotnet new --install SDG.templates.Console.Database::1.0.0
+Also, feel free to use the package we talked about during the with me at 3 to help with the menu system.
 
-To create and push your current code to github, use the task `create-github`.
+Explorer Mode
+Create a database that stores Albums, Bands, and Songs. They should have at least the following properties, use your best judgment for types. (I have left off the Foreign keys intentionally)
 
-How?
+Album
 
-1. Open your command pallette by using (Mac) `shift + cmd + p` or (Windows) `shift + ctrl + p`
-2. Search and Select `Tasks: Run Task`
-3. Select `create-github` from the dropdown
+Id
+Title
+IsExplicit
+ReleaseDate
+Band
 
-This will create a new github repo, locally and up on github and also push your current code.
+Id
+Name
+CountryOfOrigin
+NumberOfMembers
+Website
+Style
+IsSigned
+PersonOfContact
+ContactPhoneNumber
+Song
 
-## To turn in your assignment:
+Id
+Title
+Lyrics
+Length
+Genre
+For the relationships, add keys are needed to fulfill the following
 
-after you have created a github repo, completed your project and pushed your code, follow these instructions: https://suncoast.io/handbook/tools/assignment-turn-in/
+1 Album has many Songs
+1 Band has many Albums
+Create an interface to let the user :
 
-## PROTIP:
-
-When you are complete with the project and have turned it in to your instructor, update this read me with details about the assignment.
+Sign a band (add a new band)
+Produce and album (add a album, and add a few songs to that album)
+Let go a band (update isSigned to false)
+Resign a band (update isSigned to true)
+View all albums for a band
+View all the albums, ordered by ReleaseDate
+View and Albums song
+View All bands that signed
+View all bands that are not signed
